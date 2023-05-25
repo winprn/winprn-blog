@@ -10,9 +10,14 @@ const Blog = () => {
                 {
                     postsInfo.map((el, index) => {
                         return <li key={index}>
-                            <div className="mb-4">
-                                <h2 className="text-lg"><Link href={`posts/${el.slug}`}>{el.title}</Link></h2>
-                                <p className="text-sm">{el.preview}</p>
+                            <div className="mb-4 border rounded-md px-4 py-2">
+                                <h2 className="text-lg font-semibold"><Link href={`posts/${el.slug}`}>{el.title}</Link></h2>
+                                <p className="text-sm mb-2">{el.preview}</p>
+                                {
+                                    el.tags.split(',').map((tag, index) => {
+                                        return <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 dark:bg-slate-800">{tag}</span>
+                                    })
+                                }
                             </div>
                         </li >
                     })

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: CSC10002 Solo Project Documentation
+tags: Project, C/C++, CSC10002
 ---
 
 In this project, I use raylib and raygui for the GUI part. I also use tinyfiledialogs for files handling. You can read more about them at: [https://www.raylib.com/](https://www.raylib.com/), https://github.com/raysan5/raygui https://github.com/native-toolkit/libtinyfiledialogs

@@ -5,6 +5,7 @@ interface PostInfo {
     title: string;
     preview: string;
     slug: string;
+    tags: string;
 }
 
 const folder = 'posts';
@@ -18,6 +19,7 @@ export const getPostsInfo = (): PostInfo[] => {
         return {
             title: markdown.data.title,
             preview: markdown.data.preview,
+            tags: markdown.data.tags,
             slug: post.replace(".md", ""),
         }
     })

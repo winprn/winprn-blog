@@ -20,13 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <RecoilWrapper>
-        <body className={`${inter.className} bg-white text-[#71717A] dark:text-slate-300 dark:bg-black`}>
-          <div className='relative min-h-screen mx-auto w-full max-w-7xl px-8 flex flex-col items-center dark:bg-[#18181B]'>
+        <body className={`${inter.className} bg-[#FAFAFA] text-[#71717A] dark:text-slate-300 dark:bg-black`}>
+          <div className='relative min-h-screen mx-auto w-full max-w-7xl px-8 flex flex-col items-center bg-white dark:bg-[#18181B]'>
             <header className='relative h-20 z-50 p-2 w-full mb-4'>
               <Navbar />
             </header>
             {children}
-            <footer className='mt-10'>
+            <footer className='mt-10 mb-4'>
               <p className='text-sm'>&copy; 2023 winprn. All rights reserved.</p>
             </footer>
           </div>
