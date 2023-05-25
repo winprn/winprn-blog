@@ -1,6 +1,9 @@
 import Navbar from '@/components/Navbar'
 import { Inter } from 'next/font/google'
 import './globals.css';
+import { RecoilWrapper } from './RecoilWrapper';
+import { useRecoilState } from 'recoil';
+import { theme } from '@/atoms';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,21 +16,22 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
-
+  }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white text-zinc-800`}>
-        <div className='relative min-h-screen mx-auto w-full max-w-7xl px-8 flex flex-col items-center'>
-          <header className='relative h-20 z-50 p-2 w-full mb-4'>
-            <Navbar />
-          </header>
-          {children}
-          <footer className='mt-10'>
-            <p className='text-sm'>&copy; 2023 winprn. All rights reserved.</p>
-          </footer>
-        </div>
+      <RecoilWrapper>
+        <body className={`${inter.className} bg-white text-[#71717A] dark:text-slate-300 dark:bg-black`}>
+          <div className='relative min-h-screen mx-auto w-full max-w-7xl px-8 flex flex-col items-center dark:bg-[#18181B]'>
+            <header className='relative h-20 z-50 p-2 w-full mb-4'>
+              <Navbar />
+            </header>
+            {children}
+            <footer className='mt-10'>
+              <p className='text-sm'>&copy; 2023 winprn. All rights reserved.</p>
+            </footer>
+          </div>
       </body>
+      </RecoilWrapper>
     </html>
   )
 }

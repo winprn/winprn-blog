@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,6 +8,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: '#3182ce',
+              '&:hover': {
+                color: '#2c5282',
+              },
+            }
+          }
+        }
+      }),
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,8 +27,10 @@ module.exports = {
       },
       boxShadowColor: {
         'normal': 'white',
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

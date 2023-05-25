@@ -9,9 +9,9 @@ const Blog = () => {
             <ul>
                 {
                     postsInfo.map((el, index) => {
-                        return <li>
+                        return <li key={index}>
                             <div className="mb-4">
-                                <h2 className="text-lg"><Link href={`blog/${el.slug}`}>{el.title}</Link></h2>
+                                <h2 className="text-lg"><Link href={`posts/${el.slug}`}>{el.title}</Link></h2>
                                 <p className="text-sm">{el.preview}</p>
                             </div>
                         </li >
